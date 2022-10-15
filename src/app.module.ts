@@ -9,12 +9,12 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    AuthModule,
-    UsersModule,
-    MongooseModule.forRoot(process.env.MONGODB_URI),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    AuthModule,
+    UsersModule,
+    MongooseModule.forRoot(process.env.MONGODB_URI),
   ],
   controllers: [AppController, UsersController],
   providers: [AppService],
